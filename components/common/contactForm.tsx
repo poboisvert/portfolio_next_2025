@@ -1,5 +1,7 @@
 "use client";
 import React, { useState, FormEvent, ChangeEvent } from "react";
+import NextLink from "./nextlink";
+import { profile } from "@/lib/content";
 
 interface Errors {
   fullname?: boolean;
@@ -98,28 +100,27 @@ export default function ContactForm() {
 
   return (
     <>
-      <div
+      <section
         className='p-8 grid grid-cols-1 md:grid-cols-2 gap-8 pt-10 lg:px-4 px-4 sm:px-8'
         id='contact'
       >
-        <div className='w-full min-w-full mx-auto mb-10 md:mt-14'>
-          <h2 className='mt-0 dark:text-gray-50 text-gray-700'>
-            Lets talk about your projects.
-          </h2>
+        <div className='w-full min-w-full mx-auto mb-10 md:mt-10'>
+          <h2 className='mt-0'>Lets talk about your projects.</h2>
           <p className='text-sm text-gray-700 mt-4 font-light dark:text-gray-200'>
             Fill the form and send in your inquery. I will respond as soon as I
             can. <br />
             <br />
-            Alternatively, you can reach out to me on LinkedIn.
+            Alternatively, you can reach out to me on{" "}
+            <NextLink className='focus-outline' href={profile.linkedin}>
+              LinkedIn.
+            </NextLink>
           </p>
         </div>
         <form
           onSubmit={handleSubmit}
-          className='rounded-lg shadow-xl flex flex-col px-0 py-8 sm:px-8'
+          className='rounded-lg sm:shadow-xl flex flex-col px-0 py-8 sm:px-8'
         >
-          <h3 className='text-2xl font-bold dark:text-gray-50'>
-            Send a message
-          </h3>
+          <h3>Send a message</h3>
 
           <label
             htmlFor='fullname'
@@ -197,7 +198,7 @@ export default function ContactForm() {
           <div className='flex flex-row items-center justify-start'>
             <button
               type='submit'
-              className='px-10 mt-8 py-2 bg-[#87A7FF] hover:bg-[#a8b9c0] text-gray-50 font-light rounded-md text-lg flex flex-row items-center'
+              className='px-10 mt-8 py-2  bg-neon-blue dark:bg-green text-gray-50 font-light rounded-md text-lg flex flex-row items-center'
             >
               {buttonText}
               <svg
@@ -228,7 +229,7 @@ export default function ContactForm() {
             )}
           </div>
         </form>
-      </div>
+      </section>
     </>
   );
 }

@@ -3,6 +3,7 @@ import NextLink from "@/components/common/nextlink";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { ThemeProvider } from "@/components/context/ThemeContext";
+import { profile } from "@/lib/content";
 import { getProfileGitHub } from "@/lib/fetch";
 
 const ThemeToggleButton = dynamic(
@@ -30,7 +31,7 @@ const Header = async () => {
           priority={true}
         />
         <span className='pl-3 text-neon-blue dark:text-green text-xl font-semibold'>
-          poboisvert.dev
+          {profile.websiteTitle}
         </span>
       </NextLink>
       <ThemeProvider>

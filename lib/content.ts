@@ -1,20 +1,44 @@
 const profile = {
   name: "Pierre-Olivier Boisvert",
+  websiteTitle: "Boisvert.blockchain",
   linkedin: "https://www.linkedin.com/in/pierre-olivier-boisvert-a83b5796/",
   instagram: "https://www.instagram.com/poboisvert",
   github: "https://www.github.com/poboisvert",
   email: "pob944@gmail.com",
 };
 
-const tags = ["Python", "Go", "MySQL", "Postgres", "Next.js"];
-
+const tags = [
+  {
+    title: "Python",
+    description:
+      "A high-level programming language known for its simplicity and readability.",
+  },
+  {
+    title: "Go",
+    description:
+      "A statically typed, compiled programming language designed at Google.",
+  },
+  {
+    title: "MySQL",
+    description: "An open-source relational database management system.",
+  },
+  {
+    title: "Postgres",
+    description: "An open-source object-relational database system.",
+  },
+  {
+    title: "Next.js",
+    description:
+      "A React framework that enables functionality such as server-side rendering and generating static websites for React based web applications.",
+  },
+];
 const timelineData = [
   {
     type: "work",
     date: "2021-10-15",
     title: "Joined 4th Whale Marketing",
     description:
-      "I was offered and accepted a position as a Business Intelligence, and later moved up to Frontend Developer. During this time, I worked with various technologies, including Airflow (Celery Worker), Python 3+, Next.js, and MySQL",
+      "I was offered and accepted a position as a Business Intelligence, and later moved up to Frontend Developer. Technologies: Airflow (Celery Worker), AWS QuickSight, Python 3+, Next.js, and MySQL",
   },
   {
     type: "work",

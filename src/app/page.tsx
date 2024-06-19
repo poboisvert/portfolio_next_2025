@@ -10,6 +10,7 @@ import { profile, tags } from "@/lib/content";
 import Carousel from "@/components/carousel";
 import { getGithubProject } from "@/lib/fetch";
 import { ThemeProvider } from "@/components/context/ThemeContext";
+import Modals from "@/components/web/modals";
 
 const HomePage = async () => {
   const sectionClassName = "flex flex-col px-4 sm:px-8";
@@ -17,6 +18,41 @@ const HomePage = async () => {
   const slides = await getGithubProject();
   return (
     <ThemeProvider>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Boisvert Blockchain",
+            url: "https://boisvert.blockchain/",
+          }),
+        }}
+      />
+
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": ["SoftwareApplication", "MobileApplication"],
+            name: "Boisvert Blockchain",
+            operatingSystem: "OSX 10.6",
+            applicationCategory: "BusinessApplication",
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "4.8",
+              ratingCount: "142",
+            },
+            offers: {
+              "@type": "Offer",
+              price: "0.00",
+              priceCurrency: "CAD",
+            },
+          }),
+        }}
+      />
+
       <PageWrapper>
         <h1 className='px-4 sm:px-8'>
           Hello, I&apos;m <span className='inline-block'>{profile.name}</span>
@@ -34,18 +70,17 @@ const HomePage = async () => {
             technologies.
           </p>
           <div className='flex flex-wrap gap-2'>
-            {tags.map((tag: any) => (
-              <div
-                key={tag}
-                className='text-midnight dark:text-green rounded p-2 border border-midnight dark:border-green rounded-md'
-              >
-                {tag}
-              </div>
+            {tags.map((tag: any, index: number) => (
+              <Modals item={tag} key={index} />
             ))}
           </div>
         </section>
         <section>
-          <Carousel timeSecAdvance={3} slides={slides} />
+          <Carousel
+            timeSecAdvance={3}
+            slides={slides}
+            title='Latest GitHub Projects'
+          />
         </section>
         <section className={sectionClassName} aria-labelledby='tech-skills'>
           <h2 id='tech-skills'>Tech Skills</h2>
@@ -53,7 +88,7 @@ const HomePage = async () => {
             I frequently use and feel comfortable with the following
             technologies and tools:
           </p>
-          <ul className='flex flex-wrap sm:px-4'>
+          <ul className='flex flex-wrap items-center sm:px-4'>
             <ItemSoftware
               hoverClassName='text-python'
               label='Python'
@@ -200,6 +235,29 @@ const HomePage = async () => {
             </NextLink>{" "}
             or explore my online presence through the links provided below.
           </p>
+        </section>
+        <section>
+          <Carousel
+            slides={[
+              {
+                name: "BettingNews",
+                html_url: "https://www.bettingnews.com/",
+                homepage:
+                  "https://static-cdn.jtvnw.net/jtv_user_pictures/0bbefa70-bc6c-4762-b5aa-73ef28b6c5df-profile_banner-480.png",
+                owner: { login: "poboisvert" },
+                topics: ["python", "next.js", "redis", "nosqldb"],
+              },
+              {
+                name: "Condollo",
+                html_url: "https://condollo.com",
+                homepage:
+                  "https://i.ibb.co/JsJqjMG/Screenshot-2024-06-19-at-7-48-09-AM.png",
+                owner: { login: "poboisvert" },
+                topics: ["next.js", "python", "go", "supabase", "rpc"],
+              },
+            ]}
+            title='Real World Projects'
+          />
         </section>
         <ContactForm />
       </PageWrapper>

@@ -21,7 +21,7 @@ export const getGithubProject = cache(async (): Promise<any> => {
     );
     const sortedData = (await response.json())
       .sort((a: any, b: any) => b.id - a.id)
-      .slice(0, 5);
+      .slice(0, 7);
     return sortedData;
   } catch (e) {
     return [];

@@ -2,6 +2,8 @@
 
 Welcome to my Next.js portfolio, a showcase of my skills and experience as a software engineer. This portfolio is built using Next.js, a popular React-based framework for building server-rendered, statically generated, and performance-optimized websites and applications.
 
+![preview](preview.png)
+
 ## Features 🚀
 
 - Responsive design for optimal user experience on various devices
@@ -30,3 +32,8 @@ NEXT_SENDGRID_API_KEY=SG.ABC
 ## Contact Me
 
 If you have any questions or would like to discuss potential projects, feel free to reach out to me at [Your Email Address](mailto:your_email_address).
+
+# Sources
+
+- https://hangindev.com/blog/avoid-flash-of-default-theme-an-implementation-of-dark-mode-in-react-app
+- https://robkendal.co.uk/blog/how-to-build-a-multi-image-carousel-in-react-and-tailwind/

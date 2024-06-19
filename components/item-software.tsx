@@ -15,7 +15,7 @@ const ItemSoftware = ({ hoverClassName, label, icon }: Props) => {
 
   return (
     <li
-      className={`group flex flex-col flex-auto items-center sm:mx-2 md:mx-4 lg:mx-2 my-4 w-24 ${hoverClassName}`}
+      className={`group flex flex-col flex-auto items-center mx-2 my-6 w-32 xsm:w-20 sm:w-24 ${hoverClassName}`}
       aria-label={label}
     >
       {styledIcon}

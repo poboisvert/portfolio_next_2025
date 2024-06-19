@@ -12,6 +12,7 @@ export function ThemeProvider({ children }) {
   };
 
   useEffect(() => {
+    // Script to useState component toggle
     global.window.__onThemeChange = setTheme;
   }, []);
 
