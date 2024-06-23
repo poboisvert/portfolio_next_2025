@@ -155,7 +155,7 @@ const Carousel = ({ slides, timeSecAdvance, title }: any) => {
         )}
         <div
           ref={containerRef}
-          className='carousel-container relative flex overflow-x-scroll scroll-smooth snap-x snap-mandatory touch-pan-x z-0 mt-2 gap-2'
+          className='carousel-container relative flex overflow-x-scroll overflow-y-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0 mt-2 gap-2'
         >
           {slides.map((resource: any, index: number) => {
             return (
