@@ -101,7 +101,7 @@ export default function ContactForm() {
   return (
     <>
       <section
-        className='p-8 grid grid-cols-1 md:grid-cols-2 gap-8 pt-10 lg:px-4 px-4 sm:px-8'
+        className='p-8 grid grid-cols-1 md:grid-cols-2 gap-8 pt-10 px-4 sm:px-8'
         id='contact'
       >
         <div className='w-full min-w-full mx-auto mb-10 md:mt-10'>

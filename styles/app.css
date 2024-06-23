@@ -42,3 +42,130 @@
     @apply focus:outline-none focus:ring-2 focus:ring-neon-blue dark:focus:ring-green;
   }
 }
+
+/*Start Animations*/
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+/*End Animations*/
+/*
+-- Start BackGround Animation 
+*/
+.area {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+
+  animation: animate 25s linear infinite;
+  top: 10dvh;
+  border-radius: 50%;
+  filter: blur(35px);
+
+  @media only screen and (max-width: 550px) {
+    top: 13dvh;
+  }
+}
+
+.circles li:nth-child(1) {
+  left: 30%;
+  width: 200px;
+  height: 200px;
+  animation-delay: 0s;
+  background-color: rgb(216 180 254);
+  opacity: 0.25;
+  bottom: -200px;
+}
+
+.circles li:nth-child(2) {
+  left: 40%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+  background-color: rgb(253 224 71);
+  opacity: 0.25;
+}
+
+.circles li:nth-child(3) {
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  animation-delay: 4s;
+  background-color: rgb(249 168 212);
+  opacity: 0.25;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(0px, -5px) scale(1);
+    opacity: 0.21;
+  }
+  33% {
+    transform: translate(31px, 100px) scale(0.94);
+    opacity: 0.16;
+  }
+  66% {
+    transform: translate(-40px, 20px) scale(0.7);
+    opacity: 0.31;
+  }
+  100% {
+    transform: translate(30px, -15px) scale(0.97);
+    opacity: 0.25;
+  }
+}
+/*
+-- End BackGround Animation 
+*/

@@ -4,7 +4,7 @@ import React, { useState, useEffect, useContext } from "react";
 const ThemeContext = React.createContext("light");
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(global.window?.__theme || "light");
+  const [theme, setTheme] = useState(global.window?.__theme || "dark");
 
   const toggleTheme = () => {
     global.window.__setPreferredTheme(theme === "light" ? "dark" : "light");
@@ -14,6 +14,10 @@ export function ThemeProvider({ children }) {
   useEffect(() => {
     // Script to useState component toggle
     global.window.__onThemeChange = setTheme;
+
+    if (!document.documentElement.className) {
+      document.documentElement.className = "dark";
+    }
   }, []);
 
   useEffect(() => {

@@ -42,6 +42,13 @@ const timelineData = [
   },
   {
     type: "work",
+    date: "2021-05-01",
+    title: "Freelance Full Stack Developer",
+    description:
+      "Completed a WordPress project for ComediHa!, developed a landing page for realtors, and created ETL processes in PowerBI to streamline data analysis and reporting.",
+  },
+  {
+    type: "work",
     date: "2019-11-15",
     title: "Joined BrainFinance",
     description:

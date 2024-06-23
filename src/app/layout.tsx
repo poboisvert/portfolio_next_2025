@@ -54,6 +54,13 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         />
       </head>
       <body>
+        <div className='area'>
+          <ul className='circles blur-sm '>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
         <Header />
         {children}
         <Footer />

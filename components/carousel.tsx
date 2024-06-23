@@ -155,7 +155,7 @@ const Carousel = ({ slides, timeSecAdvance, title }: any) => {
         )}
         <div
           ref={containerRef}
-          className='carousel-container relative flex overflow-x-scroll scroll-smooth snap-x snap-mandatory touch-pan-x z-0 mt-2 gap-2'
+          className='carousel-container relative flex overflow-x-scroll overflow-y-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0 mt-2 gap-8'
         >
           {slides.map((resource: any, index: number) => {
             return (
@@ -165,13 +165,13 @@ const Carousel = ({ slides, timeSecAdvance, title }: any) => {
               >
                 <a
                   href={resource.html_url}
-                  className='h-full w-full aspect-square block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0'
+                  className='h-full w-full aspect-square block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0 rounded-lg'
                   style={{ backgroundImage: `url(${resource.homepage || ""})` }}
                 >
                   <img
                     src={resource.homepage || ""}
                     alt={resource.owner.login}
-                    className='w-full aspect-square hidden'
+                    className='w-full aspect-square hidden '
                   />
                 </a>
 

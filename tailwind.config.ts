@@ -5,7 +5,12 @@ const colors = require("tailwindcss/colors");
 
 const config: Config = {
   mode: "jit",
-  content: ["./components/**/*.{js,ts,jsx,tsx}", "./app/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}", // Note the addition of the `app` directory.
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   safelist: [
     "dark",
     "light",
@@ -27,12 +32,17 @@ const config: Config = {
     { pattern: /bg-./ },
     { pattern: /text-./ },
     { pattern: /border-./ },
+    {
+      pattern: /bg-(red|green|blue|purple)-(100|200|300|500|700|800)/,
+      variants: ["lg", "hover", "focus", "lg:hover"],
+    },
   ],
   darkMode: "class",
   theme: {
     colors: {
       white: colors.white,
       gray: colors.slate,
+      lightgray: "#f8f8f8",
       yellow: colors.amber,
       midnight: "#070919",
       green: "#00cc99",
@@ -49,6 +59,14 @@ const config: Config = {
       golang: "#00ADD8",
       redis: "#b31523",
       "neon-blue": "#87A7FF",
+    },
+    transitionDuration: {
+      "2000": "2000ms",
+      "200": "200ms",
+    },
+    variants: {
+      opacity: ["responsive", "hover", "focus", "disabled"],
+      backgroundColor: ["responsive", "hover", "focus", "disabled"],
     },
     fontFamily: {
       sans: ["Lato", ...defaultTheme.fontFamily.sans],
