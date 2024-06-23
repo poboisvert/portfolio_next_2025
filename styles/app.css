@@ -113,6 +113,10 @@
   top: 10dvh;
   border-radius: 50%;
   filter: blur(35px);
+
+  @media only screen and (max-width: 550px) {
+    top: 13dvh;
+  }
 }
 
 .circles li:nth-child(1) {
@@ -150,15 +154,15 @@
     opacity: 0.21;
   }
   33% {
-    transform: translate(25px, 100px) scale(0.94);
-    opacity: 0.17;
+    transform: translate(31px, 100px) scale(0.94);
+    opacity: 0.16;
   }
   66% {
     transform: translate(-40px, 20px) scale(0.7);
-    opacity: 0.21;
+    opacity: 0.31;
   }
   100% {
-    transform: translate(20px, -15px) scale(0.97);
+    transform: translate(30px, -15px) scale(0.97);
     opacity: 0.25;
   }
 }
