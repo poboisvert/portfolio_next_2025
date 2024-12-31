@@ -65,7 +65,7 @@ export default function Projects() {
                 {project.homepage && (
                   <Link
                     href={project.homepage}
-                    className='hover:underline block whitespace-nowrap overflow-hidden overflow-ellipsis' // Added width style for stable width
+                    className='hover:text-neon-blue hover:dark:text-green  block whitespace-nowrap overflow-hidden overflow-ellipsis' // Added width style for stable width
                     target='_blank'
                     rel='noopener noreferrer'
                   >

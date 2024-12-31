@@ -14,7 +14,7 @@ const ThemeToggleButton = dynamic(
 const Header = async () => {
   const data = await getProfileGitHub();
   return (
-    <header className='sticky top-0 w-full max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 dark:bg-midnight light:bg-lightgray bg-lightgray z-[50] rounded-lg'>
+    <header className='sticky top-0 w-full max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 dark:bg-midnight light:bg-lightgray bg-lightgray z-[50] rounded-bl-lg rounded-br-lg'>
       <div className='flex flex-wrap items-center w-full'>
         {/* dark mode - without text - icons only */}
         <div className='p-2 text-gray-800 rounded-lg flex items-center w-full justify-between'>
