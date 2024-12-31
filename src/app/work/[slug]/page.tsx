@@ -2,8 +2,11 @@ import { getWorkContentDetail } from "@/lib/fetch";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const content = await getWorkContentDetail(params.slug);
+export type paramsType = Promise<{ slug: string }>;
+
+export default async function Page(props: { params: paramsType }) {
+  const { slug } = await props.params;
+  const content = await getWorkContentDetail(slug);
 
   if (!content) {
     notFound();

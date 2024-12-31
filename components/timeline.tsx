@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, RefObject } from "react";
 import ItemTimeline from "@/components/item-timeline";
 import { timelineData } from "@/lib/content";
 import { useEffect, useState } from "react";
 
-function useIsVisible(ref: React.RefObject<HTMLElement>): boolean {
+function useIsVisible(ref: RefObject<HTMLDivElement | null>): boolean {
   const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const TimelinePage = () => {
     <section className='flex flex-col px-4 sm:px-8'>
       <ul>
         {timelineData.map((item, index) => {
-          const ref = useRef<HTMLDivElement>(null); // Specify the type for useRef
+          const ref = useRef<HTMLDivElement | null>(null); // Corrected useRef initialization
           const isVisible = useIsVisible(ref);
 
           return (

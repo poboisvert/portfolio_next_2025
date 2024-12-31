@@ -11,6 +11,7 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import Modals from "@/components/web/modals";
 
 import TimelinePage from "../../components/timeline";
+import Projects from "@/components/projects";
 
 const HomePage = async () => {
   const sectionClassName = "flex flex-col px-4 sm:px-8";
@@ -84,53 +85,7 @@ const HomePage = async () => {
           />
         </section>
         <section>
-          <Carousel
-            slides={[
-              {
-                name: "Proxim - Pharmacie du Village",
-                html_url: "/work/proxim-pharmacie-du-village",
-                homepage:
-                  "https://logosandtypes.com/wp-content/uploads/2020/08/proxim-pharmacies.png",
-                owner: { login: "poboisvert" },
-                topics: [
-                  "wordpress",
-                  "seo",
-                  "website optimization",
-                  "google core update",
-                  "keywords research",
-                ],
-                description:
-                  "Optimizing WordPress website, providing strategy and keywords research, maintaining website health, and following Google's Core Update.",
-                date: "October 2024",
-              },
-              {
-                name: "BettingNews",
-                html_url: "/work/bettingnews",
-                homepage:
-                  "https://static-cdn.jtvnw.net/jtv_user_pictures/0bbefa70-bc6c-4762-b5aa-73ef28b6c5df-profile_banner-480.png",
-                owner: { login: "poboisvert" },
-                topics: ["python", "next.js", "redis", "nosqldb"],
-              },
-              {
-                name: "Condollo",
-                html_url: "/work/condollo",
-                homepage:
-                  "https://i.ibb.co/JsJqjMG/Screenshot-2024-06-19-at-7-48-09-AM.png",
-                owner: { login: "poboisvert" },
-                topics: ["next.js", "python", "go", "supabase", "rpc"],
-              },
-              {
-                name: "ComediHa!",
-                html_url: "/work/ladies-night",
-                homepage:
-                  "https://ladies-night.ca/wp-content/uploads/2022/09/paralax02.jpg",
-                owner: { login: "poboisvert" },
-                topics: ["wordpress", "design", "comedy"],
-                date: "October 2022",
-              },
-            ]}
-            title='Real World Projects'
-          />
+          <Projects />
         </section>
 
         <section className={sectionClassName} aria-labelledby='timeline'>

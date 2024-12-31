@@ -32,10 +32,6 @@ const config: Config = {
     { pattern: /bg-./ },
     { pattern: /text-./ },
     { pattern: /border-./ },
-    {
-      pattern: /bg-(red|green|blue|purple)-(100|200|300|500|700|800)/,
-      variants: ["lg", "hover", "focus", "lg:hover"],
-    },
   ],
   darkMode: "class",
   theme: {

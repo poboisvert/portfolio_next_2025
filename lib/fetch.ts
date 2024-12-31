@@ -35,7 +35,7 @@ export const getWorkContentDetail = async (slug: string) => {
       title: "Pharmacie du Village - Website Optimization",
       date: "October 2024",
       overview:
-        "This project focuses on optimizing the WordPress website for Pharmacie du Village. The scope includes content SEO optimization, keyword research, and strategy, while maintaining the website in line with Google's Core Updates. Additionally, it involves updating and adding features to plugins, ensuring the site remains up-to-date and functional.",
+        "This project focuses on optimizing the WordPress website for Pharmacie du Village. The scope includes content SEO optimization, and strategy, while maintaining the website in line with Google's Core Updates. Additionally, it involves updating and adding features to plugins, ensuring the site remains up-to-date and functional, optimizing front end layout using Elementor to generate CTA in the sales funnel.",
       roleAndContribution: [
         {
           title: "SEO Optimization",

@@ -166,10 +166,14 @@ const Carousel = ({ slides, timeSecAdvance, title }: any) => {
                 <a
                   href={resource.html_url}
                   className='h-full w-full aspect-square block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0 rounded-lg'
-                  style={{ backgroundImage: `url(${resource.homepage || ""})` }}
+                  style={{
+                    backgroundImage: `url(${
+                      resource.homepage || "https://placehold.co/256x256"
+                    })`,
+                  }}
                 >
                   <img
-                    src={resource.homepage || ""}
+                    src={resource.homepage || "https://placehold.co/256x256"}
                     alt={resource.owner.login}
                     className='w-full aspect-square hidden '
                   />
