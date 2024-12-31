@@ -8,10 +8,7 @@ import { getProfileGitHub } from "@/lib/fetch";
 import SpotifyModal from "./spotify";
 
 const ThemeToggleButton = dynamic(
-  () => import("@/components/common/toggleTheme"),
-  {
-    ssr: false,
-  }
+  () => import("@/components/common/toggleTheme")
 );
 
 const Header = async () => {

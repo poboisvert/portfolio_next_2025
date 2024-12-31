@@ -12,7 +12,7 @@ import Modals from "@/components/web/modals";
 
 import TimelinePage from "../../components/timeline";
 
-const HomePage = async ({ timeline }: any) => {
+const HomePage = async () => {
   const sectionClassName = "flex flex-col px-4 sm:px-8";
   const skillIconClassName = "inline-block w-12 h-12 sm:w-16 sm:h-16";
   const slides = await getGithubProject();
