@@ -67,7 +67,7 @@ export default function Projects() {
                     href={project.homepage}
                     className='hover:text-neon-blue hover:dark:text-green  block whitespace-nowrap overflow-hidden overflow-ellipsis' // Added width style for stable width
                     target='_blank'
-                    rel='noopener noreferrer'
+                    rel='noopener noreferrer noindex nofollow'
                   >
                     <h3 className='text-xl font-semibold flex items-center'>
                       {project.name}

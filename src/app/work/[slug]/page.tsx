@@ -20,7 +20,12 @@ export default async function Page(props: { params: paramsType }) {
         <p className='text-gray-600 mb-6'>{content.date}</p>
 
         <div className='grid grid-cols-1 gap-6'>
-          <a href={content.link} className='block p-6'>
+          <a
+            href={content.link}
+            className='block p-6'
+            target='_blank'
+            rel='noopener noreferrer noindex nofollow'
+          >
             <Image
               src={content.imageSrc}
               alt={content.imageAlt}
