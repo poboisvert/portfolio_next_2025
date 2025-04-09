@@ -1,39 +1,168 @@
-# Next.js Portfolio 📚
+# Digital Excellence Portfolio
 
-Welcome to my Next.js portfolio, a showcase of my skills and experience as a software engineer. This portfolio is built using Next.js, a popular React-based framework for building server-rendered, statically generated, and performance-optimized websites and applications.
+A modern, performant portfolio website built with Next.js 13, featuring a booking system, contact forms, and dynamic content sections.
 
-![preview](preview.png)
+## 🚀 Tech Stack
 
-## Features 🚀
+- **Framework:** Next.js 13 (App Router)
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui
+- **Animations:** Framer Motion
+- **Form Handling:** React Hook Form + Zod
+- **Icons:** Lucide React
+- **Calendar:** React Day Picker
+- **Email:** Resend
+- **Calendar Integration:** Google Calendar API
 
-- Responsive design for optimal user experience on various devices
-- Server-side rendering for improved SEO and performance
-- Statically generated pages for fast page loads
-- Custom theme switching for a personalized experience
-
-## Technologies Used
-
-- Next.js for building the application
-- React for building reusable UI components
-- TypeScript for type safety and code maintainability
-- CSS-in-JS for styling and layout management
-
-## Getting Started
-
-To run this portfolio locally, clone the repository and install the dependencies using `npm install` or `yarn install`. Then, start the development server using `npm run dev` or `yarn dev`.
-
-## .env.local
+## 📁 Project Structure
 
 ```
-NEXT_SENDGRID_API_KEY=SG.ABC
-
+├── app/
+│   ├── api/                    # API routes
+│   │   ├── book-meeting/      # Meeting booking endpoint
+│   │   └── send-email/           # Contact form endpoint
+│   ├── work/                  # Work/portfolio pages
+│   ├── globals.css            # Global styles
+│   ├── layout.tsx             # Root layout
+│   └── page.tsx               # Home page
+├── components/
+│   ├── ui/                    # Reusable UI components
+│   ├── ContactAndBooking.tsx  # Contact & booking section
+│   ├── Footer.tsx            # Footer component
+│   ├── Hero.tsx              # Hero section
+│   ├── MvpProcess.tsx        # MVP process section
+│   ├── Navigation.tsx        # Navigation bar
+│   ├── Technologies.tsx      # Technologies section
+│   └── Timeline.tsx          # Timeline section
+├── lib/
+│   ├── utils.ts              # Utility functions
+│   └── work.ts               # Work/portfolio data
+└── public/
+    └── fonts/                # Custom fonts
 ```
 
-## Contact Me
+## 🔑 Key Features
 
-If you have any questions or would like to discuss potential projects, feel free to reach out to me at [Your Email Address](mailto:your_email_address).
+1. **Dynamic Portfolio Showcase**
 
-# Sources
+   - Responsive grid layout
+   - Project details pages
+   - Custom animations
 
-- https://hangindev.com/blog/avoid-flash-of-default-theme-an-implementation-of-dark-mode-in-react-app
-- https://robkendal.co.uk/blog/how-to-build-a-multi-image-carousel-in-react-and-tailwind/
+2. **Meeting Booking System**
+
+   - Google Calendar integration
+   - Email confirmations
+
+3. **Contact Form**
+
+   - Form validation
+   - Email notifications
+   - Success/error handling
+
+4. **Interactive Sections**
+   - Animated MVP process
+   - Technology expertise showcase
+   - Professional timeline
+   - Responsive navigation
+
+## 🛠️ Development
+
+### Prerequisites
+
+```bash
+Node.js 20+ (LTS recommended)
+```
+
+### Environment Variables
+
+Create a `.env` file with:
+
+```env
+NEXT_SENDGRID_API_KEY=""
+NEXT_EMAIL_RECEIVER=""
+```
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+## 📱 Responsive Design
+
+The site is fully responsive with breakpoints:
+
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
+
+## 🎨 Design System
+
+### Colors
+
+- Primary: `#21cd99`
+- Text: Various gray shades
+- Backgrounds: White and gray scales
+
+### Typography
+
+- Font: Inter (variable font)
+- Headings: Bold weights
+- Body: Regular weight
+
+### Components
+
+- Buttons
+- Cards
+- Forms
+- Navigation
+- Modal dialogs
+- Calendar picker
+- Progress indicators
+
+## 🔒 Security
+
+- Form validation with Zod
+- API route protection
+- Secure calendar integration
+- Environment variable protection
+
+## 📈 Performance
+
+- Static page generation
+- Image optimization
+- Component-level code splitting
+- Optimized animations
+- Lazy loading
+
+## 📦 Third-party Integrations
+
+- Google Calendar API
+- Resend for emails
+- Framer Motion for animations
+- Day Picker for calendar
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit changes
+4. Push to the branch
+5. Open a pull request
+
+## 📄 License
+
+MIT License - feel free to use this project for personal or commercial purposes.
