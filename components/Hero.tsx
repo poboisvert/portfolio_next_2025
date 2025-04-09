@@ -80,7 +80,7 @@ const FlyingPlane = ({
 
 export default function Hero() {
   const scrollToContact = () => {
-    const contactSection = document.querySelector("section:last-child");
+    const contactSection = document.querySelector("#contact");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
@@ -108,7 +108,7 @@ export default function Hero() {
       {/* Content Container */}
       <div className='max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 relative z-20'>
         {/* Left Content */}
-        <div className='lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start'>
+        <div className='w-full lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start'>
           {/* Profile Image Container */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
@@ -176,12 +176,12 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right Image */}
+        {/* Right Image - Hidden on mobile */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className='lg:w-1/2'
+          className='hidden lg:block lg:w-1/2'
         >
           <div className='relative w-full max-w-xl mx-auto'>
             <img
