@@ -1,6 +1,39 @@
 export const getWorkContentDetail = async (slug: string) => {
   const contents = [
     {
+      slug: "pomme-olive",
+      title: "POMME & OLIVE - Creative Web Agency",
+      date: "2024",
+      overview:
+        "POMME & OLIVE is a creative web agency specializing in modern digital experiences. This project involved creating a sophisticated agency website that showcases their creative capabilities while maintaining excellent performance and user experience.",
+      roleAndContribution: [
+        {
+          title: "Frontend Development",
+          description:
+            "Developed a modern, responsive website using cutting-edge web technologies, ensuring smooth animations and optimal performance across all devices.",
+        },
+        {
+          title: "Creative Implementation",
+          description:
+            "Translated creative designs into interactive web experiences, implementing custom animations and micro-interactions that enhance user engagement.",
+        },
+        {
+          title: "Performance Optimization",
+          description:
+            "Optimized the website for speed and SEO, implementing best practices for Core Web Vitals and ensuring fast loading times.",
+        },
+        {
+          title: "Agency Branding",
+          description:
+            "Collaborated on implementing the agency's visual identity and brand guidelines throughout the digital experience.",
+        },
+      ],
+      link: "https://pomme-olive.com/",
+      imageSrc:
+        "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop",
+      imageAlt: "POMME & OLIVE Creative Web Agency",
+    },
+    {
       slug: "pca-services",
       title: "PCA Services - Digital Transformation",
       date: "2024",
@@ -24,7 +57,8 @@ export const getWorkContentDetail = async (slug: string) => {
         },
       ],
       link: "https://pca-services.com",
-      imageSrc: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      imageSrc:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
       imageAlt: "PCA Services Digital Transformation",
     },
     {

@@ -7,6 +7,10 @@ import { ChevronDown, Linkedin } from "lucide-react";
 
 const workItems = [
   {
+    slug: "pomme-olive",
+    title: "POMME & OLIVE",
+  },
+  {
     slug: "pca-services",
     title: "PCA Services",
   },

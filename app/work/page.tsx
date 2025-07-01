@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { getWorkContentDetail } from "@/lib/work";
 
 const workItems = [
+  "pomme-olive",
   "pca-services",
   "proxim-pharmacie-du-village",
   "condollo",
@@ -55,10 +56,10 @@ export default async function WorkPage() {
                           alt={project.imageAlt}
                           className='object-cover w-full h-full transition-transform duration-500 group-hover:scale-105'
                         />
-                        
+
                         {/* Gradient Overlay on Hover */}
                         <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
-                        
+
                         {/* Arrow Icon on Hover */}
                         <div className='absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0'>
                           <ArrowRight className='w-5 h-5 text-white' />
@@ -72,25 +73,27 @@ export default async function WorkPage() {
                             {project.date}
                           </span>
                         </div>
-                        
+
                         <h2 className='text-xl font-bold text-gray-900 mb-3 group-hover:text-shamrock-600 transition-colors line-clamp-2'>
                           {project.title}
                         </h2>
-                        
+
                         <p className='text-gray-600 text-sm leading-relaxed line-clamp-3 mb-4'>
                           {project.overview}
                         </p>
 
                         {/* Technologies/Skills Tags */}
                         <div className='flex flex-wrap gap-2'>
-                          {project.roleAndContribution.slice(0, 2).map((role, idx) => (
-                            <span
-                              key={idx}
-                              className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-md'
-                            >
-                              {role.title}
-                            </span>
-                          ))}
+                          {project.roleAndContribution
+                            .slice(0, 2)
+                            .map((role, idx) => (
+                              <span
+                                key={idx}
+                                className='text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-md'
+                              >
+                                {role.title}
+                              </span>
+                            ))}
                           {project.roleAndContribution.length > 2 && (
                             <span className='text-xs text-gray-400 px-2 py-1'>
                               +{project.roleAndContribution.length - 2} more
