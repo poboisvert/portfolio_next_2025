@@ -2,7 +2,16 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Database, Brain, Globe, Code2, Palette, Sparkles, Link, DivideIcon as LucideIcon } from "lucide-react";
+import {
+  Database,
+  Brain,
+  Globe,
+  Code2,
+  Palette,
+  Sparkles,
+  Link,
+  DivideIcon as LucideIcon,
+} from "lucide-react";
 
 interface Resource {
   name: string;
@@ -12,7 +21,7 @@ interface Resource {
 
 interface Technology {
   title: string;
-  icon: LucideIcon;
+  icon: any;
   description: string;
   skills: string[];
   details: {
