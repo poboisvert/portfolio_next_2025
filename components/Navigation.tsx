@@ -91,6 +91,12 @@ export default function Navigation() {
               )}
             </AnimatePresence>
           </div>
+          <Link
+            href='/github'
+            className='text-gray-800 hover:text-shamrock-400 transition-colors'
+          >
+            GitHub Projects
+          </Link>
           <button
             onClick={scrollToContact}
             className='text-gray-800 hover:text-shamrock-400 transition-colors'

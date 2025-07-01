@@ -29,8 +29,7 @@ export const getWorkContentDetail = async (slug: string) => {
         },
       ],
       link: "https://pomme-olive.com/",
-      imageSrc:
-        "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop",
+      imageSrc: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop",
       imageAlt: "POMME & OLIVE Creative Web Agency",
     },
     {
@@ -57,8 +56,7 @@ export const getWorkContentDetail = async (slug: string) => {
         },
       ],
       link: "https://pca-services.com",
-      imageSrc:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      imageSrc: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
       imageAlt: "PCA Services Digital Transformation",
     },
     {

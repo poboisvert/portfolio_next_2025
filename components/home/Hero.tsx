@@ -124,10 +124,10 @@ const shapes: Array<'circle' | 'triangle' | 'semicircle' | 'square' | 'hexagon'>
   'circle', 'triangle', 'semicircle', 'square', 'hexagon'
 ];
 
-// Generate random floating shapes
+// Generate random floating shapes - reduced to 4
 const generateRandomShapes = () => {
   const shapeElements = [];
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 4; i++) {
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
     const randomSize = 40 + Math.random() * 60; // Size between 40-100

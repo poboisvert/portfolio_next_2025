@@ -181,7 +181,10 @@ export default function ContactAndBooking() {
   };
 
   return (
-    <section className='py-20 px-4 bg-white/30 backdrop-blur-sm paper-texture' id='contact'>
+    <section
+      className='py-20 px-4 bg-white/30 backdrop-blur-sm paper-texture'
+      id='contact'
+    >
       <div className='max-w-6xl mx-auto'>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -377,7 +380,8 @@ export default function ContactAndBooking() {
                     classNames={{
                       day_selected:
                         "bg-shamrock-400 text-white hover:bg-shamrock-500",
-                      day_today: "bg-shamrock-50 text-shamrock-600 font-semibold",
+                      day_today:
+                        "bg-shamrock-50 text-shamrock-600 font-semibold",
                       day: "hover:bg-shamrock-50 rounded-lg transition-colors",
                       day_disabled:
                         "text-gray-300 hover:bg-transparent cursor-not-allowed",

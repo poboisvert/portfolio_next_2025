@@ -17,79 +17,17 @@
 }
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
   
   body {
     @apply bg-background text-foreground;
-    background-image: 
-      radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0),
-      radial-gradient(circle at 2px 2px, rgba(0,0,0,0.08) 1px, transparent 0),
-      radial-gradient(circle at 3px 3px, rgba(0,0,0,0.05) 1px, transparent 0);
-    background-size: 20px 20px, 40px 40px, 60px 60px;
-    background-position: 0 0, 10px 10px, 20px 20px;
     background-color: #fefefe;
     position: relative;
   }
 
+  /* Enhanced grainy paper texture background */
   body::before {
     content: '';
     position: fixed;
@@ -97,10 +35,74 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://cdn.prod.website-files.com/64a24a477b774d01d169b819/64a25c6b93ad13ce30aa73d1_background-texture.jpg');
-    background-size: 400px 400px;
+    background-image: 
+      /* Fine grain texture */
+      radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0),
+      radial-gradient(circle at 2px 2px, rgba(0,0,0,0.08) 1px, transparent 0),
+      radial-gradient(circle at 3px 3px, rgba(0,0,0,0.05) 1px, transparent 0),
+      /* Paper fiber texture */
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.01) 2px,
+        rgba(0,0,0,0.01) 4px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.01) 2px,
+        rgba(0,0,0,0.01) 4px
+      ),
+      /* Subtle noise pattern */
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 1px,
+        rgba(0,0,0,0.005) 1px,
+        rgba(0,0,0,0.005) 2px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 1px,
+        rgba(0,0,0,0.005) 1px,
+        rgba(0,0,0,0.005) 2px
+      );
+    background-size: 
+      20px 20px, 
+      40px 40px, 
+      60px 60px,
+      4px 4px,
+      4px 4px,
+      8px 8px,
+      8px 8px;
+    background-position: 
+      0 0, 
+      10px 10px, 
+      20px 20px,
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: -2;
+  }
+
+  /* Additional paper texture overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxmaWx0ZXIgaWQ9Im5vaXNlIiB4PSIwJSIgeT0iMCUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgogICAgICA8ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9IjAuOSIgbnVtT2N0YXZlcz0iNCIgcmVzdWx0PSJub2lzZSIgc2VlZD0iMSIvPgogICAgICA8ZmVDb2xvck1hdHJpeCBpbj0ibm9pc2UiIHR5cGU9InNhdHVyYXRlIiB2YWx1ZXM9IjAiLz4KICAgIDwvZmlsdGVyPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjbm9pc2UpIiBvcGFjaXR5PSIwLjAzIi8+Cjwvc3ZnPg==');
+    background-size: 200px 200px;
     background-repeat: repeat;
-    opacity: 0.03;
+    opacity: 0.4;
     pointer-events: none;
     z-index: -1;
   }
@@ -126,7 +128,7 @@
   }
 }
 
-/* Additional paper texture effects */
+/* Enhanced paper texture class for specific elements */
 .paper-texture {
   position: relative;
 }
@@ -139,10 +141,26 @@
   right: 0;
   bottom: 0;
   background-image: 
+    /* Additional fine grain for enhanced texture */
     radial-gradient(circle at 25% 25%, rgba(0,0,0,0.02) 2px, transparent 2px),
     radial-gradient(circle at 75% 75%, rgba(0,0,0,0.02) 1px, transparent 1px),
-    radial-gradient(circle at 50% 50%, rgba(0,0,0,0.01) 1px, transparent 1px);
-  background-size: 30px 30px, 20px 20px, 40px 40px;
+    radial-gradient(circle at 50% 50%, rgba(0,0,0,0.01) 1px, transparent 1px),
+    /* Organic paper fibers */
+    repeating-linear-gradient(
+      23deg,
+      transparent,
+      transparent 3px,
+      rgba(0,0,0,0.008) 3px,
+      rgba(0,0,0,0.008) 4px
+    ),
+    repeating-linear-gradient(
+      67deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.006) 2px,
+      rgba(0,0,0,0.006) 3px
+    );
+  background-size: 30px 30px, 20px 20px, 40px 40px, 12px 12px, 8px 8px;
   pointer-events: none;
   z-index: 1;
 }
@@ -163,5 +181,31 @@
       transparent 2px,
       rgba(0,0,0,0.005) 2px,
       rgba(0,0,0,0.005) 4px
+    ),
+    /* Random grain pattern */
+    repeating-linear-gradient(
+      37deg,
+      transparent,
+      transparent 1px,
+      rgba(0,0,0,0.003) 1px,
+      rgba(0,0,0,0.003) 2px
     );
+}
+
+/* Grainy texture for cards and overlays */
+.grainy-bg {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(0,0,0,0.1) 1px, transparent 0),
+    radial-gradient(circle at 2px 2px, rgba(0,0,0,0.05) 1px, transparent 0);
+  background-size: 16px 16px, 32px 32px;
+  background-position: 0 0, 8px 8px;
+}
+
+/* Enhanced backdrop blur with grain */
+.backdrop-blur-grainy {
+  backdrop-filter: blur(8px);
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0),
+    radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+  background-size: 12px 12px, 24px 24px;
 }
