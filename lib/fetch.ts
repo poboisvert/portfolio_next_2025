@@ -1,32 +1,35 @@
+import { cache } from "react";
+
+export const getProfileGitHub = cache(async (): Promise<any> => {
+  try {
+    const data = await fetch("https://api.github.com/users/poboisvert").then(
+      (res) => res.json()
+    );
+    return data;
+  } catch (err) {
+    return null;
+  }
+});
+
+export const getGithubProject = cache(async (): Promise<any> => {
+  try {
+    const response = await fetch(
+      `https://api.github.com/users/poboisvert/repos?per_page=100`,
+      {
+        next: { revalidate: 3600 },
+      }
+    );
+    const sortedData = (await response.json())
+      .sort((a: any, b: any) => b.id - a.id)
+      .slice(0, 7);
+    return sortedData;
+  } catch (e) {
+    return [];
+  }
+});
+
 export const getWorkContentDetail = async (slug: string) => {
   const contents = [
-    {
-      slug: "pca-services",
-      title: "PCA Services - Digital Transformation",
-      date: "2024",
-      overview:
-        "Comprehensive digital transformation project for PCA Services, focusing on modernizing their web presence and improving user experience through advanced web technologies.",
-      roleAndContribution: [
-        {
-          title: "Frontend Development",
-          description:
-            "Built a modern, responsive website using Next.js and React, ensuring optimal performance across all devices and browsers.",
-        },
-        {
-          title: "UI/UX Design",
-          description:
-            "Created an intuitive user interface with focus on accessibility and user experience, implementing modern design principles.",
-        },
-        {
-          title: "Performance Optimization",
-          description:
-            "Implemented advanced optimization techniques to achieve excellent Core Web Vitals scores and fast loading times.",
-        },
-      ],
-      link: "https://pca-services.com",
-      imageSrc: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-      imageAlt: "PCA Services Digital Transformation",
-    },
     {
       slug: "proxim-pharmacie-du-village",
       title: "Pharmacie du Village - Website Optimization",
@@ -47,17 +50,17 @@ export const getWorkContentDetail = async (slug: string) => {
         {
           title: "Website Maintenance",
           description:
-            "Maintained the overall health of the website, ensuring timely updates and monitoring the site's performance against Google's Core Updates to prevent ranking drops.",
+            "Maintained the overall health of the website, ensuring timely updates and monitoring the site’s performance against Google's Core Updates to prevent ranking drops.",
         },
         {
           title: "Content Strategy",
           description:
-            "Refined the website's content strategy to align with SEO best practices, driving organic traffic and boosting overall engagement.",
+            "Refined the website’s content strategy to align with SEO best practices, driving organic traffic and boosting overall engagement.",
         },
       ],
       link: "https://pharmacieduvillage.ca/",
       imageSrc:
-        "https://logosandtypes.com/wp-content/uploads/2020/08/proxim-pharmacies.png",
+        "https://logosandtypes.com/wp-content/uploads/2020/08/proxim-pharmacies.png", // Replace with actual image URL if available
       imageAlt: "Pharmacie du Village - Website Optimization",
     },
     {

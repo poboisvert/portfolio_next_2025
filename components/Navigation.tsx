@@ -39,19 +39,19 @@ export default function Navigation() {
   };
 
   return (
-    <nav className='fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-[#21cd99]/10'>
+    <nav className='fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-shamrock-400/10'>
       <div className='max-w-7xl mx-auto px-4 py-4 flex justify-between items-center'>
         <div className='flex gap-6 items-center'>
           <Link
             href='/'
-            className='text-gray-800 hover:text-[#21cd99] transition-colors'
+            className='text-gray-800 hover:text-shamrock-400 transition-colors'
           >
             Home
           </Link>
           <div className='relative'>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className='flex items-center gap-1 text-gray-800 hover:text-[#21cd99] transition-colors'
+              className='flex items-center gap-1 text-gray-800 hover:text-shamrock-400 transition-colors'
               onMouseEnter={() => setIsOpen(true)}
             >
               Work
@@ -67,7 +67,7 @@ export default function Navigation() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
                   transition={{ duration: 0.2 }}
-                  className='absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-lg border border-[#21cd99]/10'
+                  className='absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-lg border border-shamrock-400/10'
                   onMouseLeave={() => setIsOpen(false)}
                 >
                   {workItems.map((item, index) => (
@@ -75,7 +75,7 @@ export default function Navigation() {
                       key={item.slug}
                       href={`/work/${item.slug}`}
                       className={`
-                        block px-4 py-3 text-gray-700 hover:text-[#21cd99] hover:bg-[#21cd99]/5 transition-colors
+                        block px-4 py-3 text-gray-700 hover:text-shamrock-400 hover:bg-shamrock-50 transition-colors
                         ${index === 0 ? "rounded-t-xl" : ""}
                         ${index === workItems.length - 1 ? "rounded-b-xl" : ""}
                       `}
@@ -89,7 +89,7 @@ export default function Navigation() {
           </div>
           <button
             onClick={scrollToContact}
-            className='text-gray-800 hover:text-[#21cd99] transition-colors'
+            className='text-gray-800 hover:text-shamrock-400 transition-colors'
           >
             Get in Touch
           </button>
@@ -97,7 +97,7 @@ export default function Navigation() {
         <motion.a
           whileHover={{ scale: 1.1 }}
           href='https://www.linkedin.com/in/pierre-olivier-boisvert-a83b5796/'
-          className='text-gray-800 hover:text-[#21cd99] transition-colors'
+          className='text-gray-800 hover:text-shamrock-400 transition-colors'
         >
           <Linkedin size={24} />
         </motion.a>

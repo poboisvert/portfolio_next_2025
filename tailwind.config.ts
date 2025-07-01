@@ -12,17 +12,22 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-inter)', 'sans-serif'],
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
-      },
       colors: {
+        // Shamrock color palette from the image
+        shamrock: {
+          50: '#EBFEF6',   // Lightest mint
+          100: '#CEFDE8',  // Light mint
+          200: '#A2F8D5',  // Medium light
+          300: '#67EEC1',  // Medium
+          400: '#21CD99',  // Primary shamrock (locked)
+          500: '#06C390',  // Medium dark
+          600: '#009F76',  // Dark
+          700: '#007F62',  // Darker
+          800: '#01644E',  // Very dark
+          900: '#025242',  // Darkest
+          950: '#002F26',  // Almost black
+        },
+        // Keep existing shadcn colors
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -63,6 +68,16 @@ const config: Config = {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
       },
       keyframes: {
         'accordion-down': {

@@ -101,7 +101,7 @@ export default function ContactAndBooking() {
           className={`p-2 rounded-full transition-colors ${
             isCurrentMonth
               ? "text-gray-300 cursor-not-allowed"
-              : "text-gray-600 hover:bg-[#21cd99]/10 hover:text-[#21cd99]"
+              : "text-gray-600 hover:bg-shamrock-50 hover:text-shamrock-400"
           }`}
           aria-label='Previous month'
         >
@@ -112,7 +112,7 @@ export default function ContactAndBooking() {
         </div>
         <button
           onClick={() => onMonthChange(addMonths(month, 1))}
-          className='p-2 rounded-full text-gray-600 hover:bg-[#21cd99]/10 hover:text-[#21cd99] transition-colors'
+          className='p-2 rounded-full text-gray-600 hover:bg-shamrock-50 hover:text-shamrock-400 transition-colors'
           aria-label='Next month'
         >
           <ChevronRight className='w-5 h-5' />
@@ -181,7 +181,7 @@ export default function ContactAndBooking() {
   };
 
   return (
-    <section className='py-20 px-4 bg-gray-50' id='contact'>
+    <section className='py-20 px-4 bg-white/30 backdrop-blur-sm paper-texture' id='contact'>
       <div className='max-w-6xl mx-auto'>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -196,12 +196,12 @@ export default function ContactAndBooking() {
             Choose how you'd like to connect with us
           </p>
 
-          <div className='inline-flex rounded-lg border border-gray-200 p-1 bg-white'>
+          <div className='inline-flex rounded-lg border border-gray-200 p-1 bg-white/80 backdrop-blur-sm'>
             <button
               onClick={() => setMode("message")}
               className={`px-4 py-2 rounded-md transition-colors ${
                 mode === "message"
-                  ? "bg-[#21cd99] text-white"
+                  ? "bg-shamrock-400 text-white"
                   : "text-gray-600 hover:text-gray-900"
               }`}
             >
@@ -214,7 +214,7 @@ export default function ContactAndBooking() {
               onClick={() => setMode("meeting")}
               className={`px-4 py-2 rounded-md transition-colors ${
                 mode === "meeting"
-                  ? "bg-[#21cd99] text-white"
+                  ? "bg-shamrock-400 text-white"
                   : "text-gray-600 hover:text-gray-900"
               }`}
             >
@@ -234,7 +234,7 @@ export default function ContactAndBooking() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               onSubmit={messageForm.handleSubmit(handleSendMessage)}
-              className='max-w-3xl mx-auto bg-white rounded-2xl p-8 shadow-lg border border-[#21cd99]/10'
+              className='max-w-3xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-shamrock-100'
             >
               <div className='space-y-6'>
                 <div>
@@ -247,7 +247,7 @@ export default function ContactAndBooking() {
                   <input
                     {...messageForm.register("fullName")}
                     type='text'
-                    className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#21cd99] focus:border-transparent'
+                    className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-shamrock-400 focus:border-transparent bg-white/80'
                     placeholder='John Doe'
                   />
                   {messageForm.formState.errors.fullName && (
@@ -267,7 +267,7 @@ export default function ContactAndBooking() {
                   <input
                     {...messageForm.register("email")}
                     type='email'
-                    className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#21cd99] focus:border-transparent'
+                    className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-shamrock-400 focus:border-transparent bg-white/80'
                     placeholder='john@example.com'
                   />
                   {messageForm.formState.errors.email && (
@@ -287,7 +287,7 @@ export default function ContactAndBooking() {
                   <input
                     {...messageForm.register("subject")}
                     type='text'
-                    className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#21cd99] focus:border-transparent'
+                    className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-shamrock-400 focus:border-transparent bg-white/80'
                     placeholder='Project Discussion'
                   />
                   {messageForm.formState.errors.subject && (
@@ -307,7 +307,7 @@ export default function ContactAndBooking() {
                   <textarea
                     {...messageForm.register("message")}
                     rows={5}
-                    className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#21cd99] focus:border-transparent'
+                    className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-shamrock-400 focus:border-transparent bg-white/80'
                     placeholder='Tell us about your project...'
                   />
                   {messageForm.formState.errors.message && (
@@ -320,7 +320,7 @@ export default function ContactAndBooking() {
                 <button
                   type='submit'
                   disabled={isSubmitting}
-                  className='w-full bg-[#21cd99] text-white py-3 px-6 rounded-lg font-medium flex items-center justify-center gap-2 disabled:opacity-70'
+                  className='w-full bg-shamrock-400 text-white py-3 px-6 rounded-lg font-medium flex items-center justify-center gap-2 disabled:opacity-70 hover:bg-shamrock-500 transition-colors'
                 >
                   {isSubmitting ? (
                     <>
@@ -346,9 +346,9 @@ export default function ContactAndBooking() {
               className='max-w-3xl mx-auto'
             >
               <div className='grid md:grid-cols-2 gap-8'>
-                <div className='bg-white rounded-2xl p-6 shadow-lg border border-[#21cd99]/10'>
+                <div className='bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-shamrock-100'>
                   <div className='flex items-center gap-2 mb-6'>
-                    <Calendar className='w-5 h-5 text-[#21cd99]' />
+                    <Calendar className='w-5 h-5 text-shamrock-400' />
                     <h3 className='text-xl font-semibold text-gray-900'>
                       Select a Date
                     </h3>
@@ -376,9 +376,9 @@ export default function ContactAndBooking() {
                     className='border-0'
                     classNames={{
                       day_selected:
-                        "bg-[#21cd99] text-white hover:bg-[#21cd99]/90",
-                      day_today: "bg-[#21cd99]/10 text-[#21cd99] font-semibold",
-                      day: "hover:bg-[#21cd99]/5 rounded-lg transition-colors",
+                        "bg-shamrock-400 text-white hover:bg-shamrock-500",
+                      day_today: "bg-shamrock-50 text-shamrock-600 font-semibold",
+                      day: "hover:bg-shamrock-50 rounded-lg transition-colors",
                       day_disabled:
                         "text-gray-300 hover:bg-transparent cursor-not-allowed",
                       nav: "hidden",
@@ -387,15 +387,15 @@ export default function ContactAndBooking() {
                       table: "w-full border-collapse",
                       cell: "p-0 relative",
                       button:
-                        "w-10 h-10 hover:bg-[#21cd99]/5 rounded-lg transition-colors",
+                        "w-10 h-10 hover:bg-shamrock-50 rounded-lg transition-colors",
                     }}
                   />
                 </div>
 
-                <div className='space-y-6 bg-white rounded-2xl p-6 shadow-lg border border-[#21cd99]/10'>
+                <div className='space-y-6 bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-shamrock-100'>
                   <div>
                     <div className='flex items-center gap-2 mb-6'>
-                      <Clock className='w-5 h-5 text-[#21cd99]' />
+                      <Clock className='w-5 h-5 text-shamrock-400' />
                       <h3 className='text-xl font-semibold text-gray-900'>
                         Select a Time
                       </h3>
@@ -411,8 +411,8 @@ export default function ContactAndBooking() {
                           }}
                           className={`p-3 rounded-lg border transition-colors ${
                             selectedTime === time
-                              ? "bg-[#21cd99] text-white border-[#21cd99]"
-                              : "border-gray-200 hover:border-[#21cd99] text-gray-700"
+                              ? "bg-shamrock-400 text-white border-shamrock-400"
+                              : "border-gray-200 hover:border-shamrock-400 text-gray-700 bg-white/80"
                           }`}
                         >
                           {time}
@@ -431,7 +431,7 @@ export default function ContactAndBooking() {
                     <input
                       {...bookingForm.register("name")}
                       type='text'
-                      className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#21cd99] focus:border-transparent'
+                      className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-shamrock-400 focus:border-transparent bg-white/80'
                       placeholder='John Doe'
                     />
                     {bookingForm.formState.errors.name && (
@@ -451,7 +451,7 @@ export default function ContactAndBooking() {
                     <input
                       {...bookingForm.register("email")}
                       type='email'
-                      className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#21cd99] focus:border-transparent'
+                      className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-shamrock-400 focus:border-transparent bg-white/80'
                       placeholder='john@example.com'
                     />
                     {bookingForm.formState.errors.email && (
@@ -472,7 +472,7 @@ export default function ContactAndBooking() {
                       <input
                         {...bookingForm.register("location")}
                         type='text'
-                        className='w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#21cd99] focus:border-transparent'
+                        className='w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-shamrock-400 focus:border-transparent bg-white/80'
                         placeholder='City, Country'
                       />
                       <Globe className='w-5 h-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2' />
@@ -482,7 +482,7 @@ export default function ContactAndBooking() {
                   <button
                     type='submit'
                     disabled={isSubmitting || !selectedDate || !selectedTime}
-                    className='w-full bg-[#21cd99] text-white py-4 px-6 rounded-lg font-medium flex items-center justify-center gap-2 disabled:opacity-50 transition-opacity'
+                    className='w-full bg-shamrock-400 text-white py-4 px-6 rounded-lg font-medium flex items-center justify-center gap-2 disabled:opacity-50 transition-opacity hover:bg-shamrock-500'
                   >
                     {isSubmitting ? (
                       <>

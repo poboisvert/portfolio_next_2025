@@ -2,16 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Database,
-  Brain,
-  Globe,
-  Code2,
-  Palette,
-  Sparkles,
-  Link,
-  LucideIcon,
-} from "lucide-react";
+import { Database, Brain, Globe, Code2, Palette, Sparkles, Link, DivideIcon as LucideIcon } from "lucide-react";
 
 interface Resource {
   name: string;
@@ -304,7 +295,7 @@ export default function Technologies() {
   const Icon = currentTech.icon;
 
   return (
-    <section className='py-20 px-4 bg-gray-50'>
+    <section className='py-20 px-4 bg-white/50 backdrop-blur-sm paper-texture'>
       <div className='max-w-6xl mx-auto'>
         <div className='flex flex-col md:flex-row gap-12'>
           {/* Left side - Title and Progress */}
@@ -317,7 +308,7 @@ export default function Technologies() {
             </p>
             <div className='h-2 bg-gray-200 rounded-full overflow-hidden mb-8'>
               <motion.div
-                className='h-full bg-[#21cd99]'
+                className='h-full bg-shamrock-400'
                 animate={{ width: `${progress}%` }}
                 transition={{ duration: 0.05 }}
               />
@@ -334,14 +325,14 @@ export default function Technologies() {
                     className={`flex items-center gap-3 p-3 rounded-lg transition-colors cursor-pointer
                       ${
                         isActive
-                          ? "bg-[#21cd99]/10 text-gray-900"
+                          ? "bg-shamrock-50 text-gray-900"
                           : "text-gray-400 hover:text-gray-600"
                       }`}
                     onClick={() => handleTechClick(index)}
                   >
                     <TechIcon
                       className={`w-5 h-5 ${
-                        isActive ? "text-[#21cd99]" : "text-current"
+                        isActive ? "text-shamrock-400" : "text-current"
                       }`}
                     />
                     <span
@@ -366,12 +357,12 @@ export default function Technologies() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className='bg-white p-8 rounded-2xl border border-[#21cd99]/10 shadow-lg'
+                className='bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-shamrock-100 shadow-lg'
               >
                 {/* Mobile View - Icon and Title */}
                 <div className='flex flex-col items-center md:items-start gap-4 md:flex-row md:gap-6 mb-6'>
-                  <div className='p-4 bg-[#21cd99]/10 rounded-xl'>
-                    <Icon className='w-8 h-8 text-[#21cd99]' />
+                  <div className='p-4 bg-shamrock-50 rounded-xl'>
+                    <Icon className='w-8 h-8 text-shamrock-400' />
                   </div>
                   <div className='text-center md:text-left flex-1'>
                     <h3 className='text-gray-900 text-2xl font-semibold mb-3'>
@@ -388,7 +379,7 @@ export default function Technologies() {
                   {currentTech.skills.map((skill, index) => (
                     <span
                       key={index}
-                      className='px-4 py-2 bg-[#21cd99]/5 rounded-full text-[#21cd99] border border-[#21cd99]/20 text-sm font-medium'
+                      className='px-4 py-2 bg-shamrock-50 rounded-full text-shamrock-600 border border-shamrock-200 text-sm font-medium'
                     >
                       {skill}
                     </span>
@@ -413,7 +404,7 @@ export default function Technologies() {
                                 key={index}
                                 className='flex items-center gap-2 text-gray-600'
                               >
-                                <div className='w-2 h-2 rounded-full bg-[#21cd99]' />
+                                <div className='w-2 h-2 rounded-full bg-shamrock-400' />
                                 {value}
                               </li>
                             ))}
@@ -437,11 +428,11 @@ export default function Technologies() {
                           href={resource.url}
                           target='_blank'
                           rel='noopener noreferrer'
-                          className='flex items-center gap-3 p-3 rounded-lg bg-gray-50 hover:bg-[#21cd99]/5 transition-colors group'
+                          className='flex items-center gap-3 p-3 rounded-lg bg-gray-50/80 hover:bg-shamrock-50 transition-colors group'
                         >
-                          <Link className='w-5 h-5 text-gray-400 group-hover:text-[#21cd99]' />
+                          <Link className='w-5 h-5 text-gray-400 group-hover:text-shamrock-400' />
                           <div>
-                            <div className='font-medium text-gray-900 group-hover:text-[#21cd99]'>
+                            <div className='font-medium text-gray-900 group-hover:text-shamrock-600'>
                               {resource.name}
                             </div>
                             <div className='text-sm text-gray-500'>
